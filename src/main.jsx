@@ -10,13 +10,15 @@ import {
 
 const router = createBrowserRouter([
   {
-    path: "/",
     element: <App />,
+    children: [{
+      index: true,
+      element: <h1>List of products</h1>
+    }, {
+      path: 'cart',
+      element: <h1>Checkout page</h1>
+    }]
   },
-  {
-    path: "/checkout",
-    element: <h1>Checkout page</h1>
-  }
 ]);
 
 
