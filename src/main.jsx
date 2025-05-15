@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
+import Products from './pages/Products.jsx'
 
 import {
   createBrowserRouter,
@@ -13,7 +14,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [{
       index: true,
-      element: <h1>List of products</h1>
+      element: <Products />
     }, {
       path: 'cart',
       element: <h1>Checkout page</h1>
