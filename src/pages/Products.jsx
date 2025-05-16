@@ -1,21 +1,8 @@
-import { useEffect, useState } from "react";
-
+import { useOutletContext } from "react-router-dom";
 import Product from "../components/Product";
 
-const CATEGORY = 'men\'s clothing';
-
 function Products () {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    const fetchProducts = () => {
-      fetch('https://fakestoreapi.com/products')
-      .then(response => response.json())
-      .then(data => setProducts(data.filter(item => item.category === CATEGORY)));
-    }
-
-    fetchProducts();
-  }, []);
+  const { products } = useOutletContext();
 
   return (
     <>
