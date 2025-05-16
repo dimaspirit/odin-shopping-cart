@@ -1,17 +1,17 @@
-import './App.css'
-import { Link, Outlet } from 'react-router'
+import './App.css';
+import { Outlet } from 'react-router';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <>
-      <nav>
-        <Link to="/">Go to PRODUCTS page</Link>
-        <Link to="cart">Go to CART page</Link>
-      </nav>
+      <Navbar />
 
-      <Outlet />
-
-      <footer>Footer</footer>
+      <main>
+        <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+          <Outlet />
+        </div>
+      </main>
     </>
   )
 }
