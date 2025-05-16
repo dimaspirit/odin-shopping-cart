@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import Product from "../components/Products";
+import Product from "../components/Product";
 
 const CATEGORY = 'men\'s clothing';
 
