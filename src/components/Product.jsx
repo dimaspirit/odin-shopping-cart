@@ -1,4 +1,8 @@
-function Product({product}) {
+function Product({product, cart, onClick}) {
+  const isProductAdded = cart.find(item => item === product.id);
+  const btnClasses = `btn ${isProductAdded ? '' : 'btn-primary'}`;
+  const btnText = isProductAdded ? 'Remove' : 'Buy Now';
+
   return (
     <div className="pt-4 card bg-base-100 shadow-sm">
       <figure>
@@ -13,7 +17,7 @@ function Product({product}) {
         </h2>
         <p className="line-clamp-3 md:line-clamp-4">{product.description}</p>
         <div className="mt-2 card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
+          <button className={btnClasses} onClick={() => onClick(product.id)}>{btnText}</button>
         </div>
       </div>
     </div>
