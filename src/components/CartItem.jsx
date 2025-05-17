@@ -1,25 +1,25 @@
-function CartItem() {
+function CartItem({product, onRemove}) {
   return (
-    <li class="flex py-6">
-      <div class="size-24 shrink-0 overflow-hidden rounded-md border border-gray-200">
-        <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/shopping-cart-page-04-product-01.jpg" alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." class="size-full object-cover" />
+    <li className="flex py-6">
+      <div className="size-24 shrink-0 overflow-hidden rounded-md border border-gray-200">
+        <img src={product.image} alt={product.description} className="size-full object-contain" />
       </div>
 
-      <div class="ml-4 flex flex-1 flex-col">
+      <div className="ml-4 flex flex-1 flex-col">
         <div>
-          <div class="flex justify-between text-base font-medium text-gray-900">
+          <div className="flex justify-between text-base font-medium text-gray-900">
             <h3>
-              <a href="#">Throwback Hip Bag</a>
+              <a href="#">{product.title}</a>
             </h3>
-            <p class="ml-4">$90.00</p>
+            <p className="ml-4">${product.price}</p>
           </div>
-          <p class="mt-1 text-sm text-gray-500">Salmon</p>
+          <p className="mt-1 text-sm text-gray-500">Rating: {product.rating.rate}</p>
         </div>
-        <div class="flex flex-1 items-end justify-between text-sm">
-          <p class="text-gray-500">Qty 1</p>
+        <div className="flex flex-1 items-end justify-between text-sm">
+          <p className="text-gray-500">Qty 1</p>
 
-          <div class="flex">
-            <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
+          <div className="flex">
+            <button className="btn btn-ghost" onClick={() => onRemove(product.id)}>Remove</button>
           </div>
         </div>
       </div>

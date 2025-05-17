@@ -1,5 +1,5 @@
 function Product({product, cart, onClick}) {
-  const isProductAdded = cart.find(item => item === product.id);
+  const isProductAdded = cart.find(item => item.id === product.id);
   const btnClasses = `btn ${isProductAdded ? '' : 'btn-primary'}`;
   const btnText = isProductAdded ? 'Remove' : 'Buy Now';
 

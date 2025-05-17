@@ -5,11 +5,11 @@ function Products () {
   const { products, cart, setCart } = useOutletContext();
 
   const handleToggleToCart = (id) => {
-    const isProductAdded = cart.find(item => item === id);
+    const isProductAdded = cart.find(item => item.id === id);
     if(isProductAdded) {
-      setCart(cart.filter(item => item !== id));
+      setCart(cart.filter(item => item.id !== id));
     } else {
-      setCart(cart.concat([id]));
+      setCart(cart.concat([{id, qty: 1}]));
     }
   }
 
