@@ -10,8 +10,8 @@ import {
   RouterProvider,
 } from "react-router";
 
-const router = createBrowserRouter([
-  {
+const router = createBrowserRouter(
+  [{
     element: <App />,
     children: [{
       index: true,
@@ -20,8 +20,11 @@ const router = createBrowserRouter([
       path: 'cart',
       element: <Cart />
     }]
-  },
-]);
+  }],
+  { 
+    basename: "/odin-shopping-cart/" 
+  }
+);
 
 
 
