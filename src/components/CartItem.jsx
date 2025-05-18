@@ -1,7 +1,6 @@
 function CartItem({product, onRemove, onChangeQty}) {
   const handleChangeQty = (event) => {
     const value = event.target.value;
-    console.log('handleChangeQty', value);
 
     onChangeQty(product.id, +value);
   }
